@@ -1,0 +1,53 @@
+/* Sidebar styling */
+.sidebar {
+  background-color: #f8f9fa;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  height: calc(100vh - 100px);
+}
+
+/* List group item styling */
+.list-group-item {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Hover and active states for list items */
+.list-group-item:hover {
+  background-color: #FF4E50;
+  color: white;
+}
+
+.list-group-item.active {
+  background-color: #FF4E50;
+  color: white;
+}
+
+/* Content card styling */
+.card-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  margin-top: 120px;
+}
+
+.card-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  margin-top: 120px;
+}
+
+/* Card margin adjustment */
+.card-content + section {
+  margin-top: 20px;
+}
+
+

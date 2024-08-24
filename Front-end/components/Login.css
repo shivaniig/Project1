@@ -1,0 +1,40 @@
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .btn-outline-primary {
+    border-color: #FF4E50;
+    color: #FF4E50;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #FF4E50;
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #FF4E50;
+    border-color: #FF4E50;
+  }
+  
+  .text-black {
+    color: #000;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
