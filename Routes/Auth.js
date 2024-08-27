@@ -1,6 +1,6 @@
 const express = require('express')
 const { registerController,
-    loginController,
+    loginController,loginUser,
     currentUserController,fetchAllUsersController } = require('../Controllers/AuthController');
 const authMiddleware = require('../Middlewares/authMiddleware');
 
