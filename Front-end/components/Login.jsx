@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css'; // Assuming you have a separate CSS file for custom styles
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -36,12 +36,12 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem('token', data.token);
-        toast.success('Login successful!');
-        const decodedToken = jwt_decode(data.token);
-        const userRole = decodedToken.role;
-        if (userRole !== 'admin') {
-          return <Redirect to="/unauthorized" />;
+        // localStorage.setItem('token', data.token);
+        // toast.success('Login successful!');
+        // const decodedToken = jwt_decode(data.token);
+        // const userRole = decodedToken.role;
+        // if (userRole !== 'admin') {
+        //   return <Redirect to="/unauthorized" />;
         }
       
         return <div>Admin Content</div>;

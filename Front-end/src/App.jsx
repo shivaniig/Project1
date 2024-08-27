@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Index from '../components/Index';
 import Header from '../components/Header';
@@ -25,11 +25,20 @@ import Chatbot from '../components/Chatbot';
 import UserGuide from '../components/UserGuide';
 import ProfileUpload from '../components/Profile';
 import DataDisplay from '../components/DataDisplat';
-import HospitalForm from '../components/HospitalForm'
+import HospitalForm from '../components/HospitalForm';
 import DoctorForm from '../components/DoctorForm';
+import Loader from '../components/Loader';
 
 const App = () => {
   const [token, setToken] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000); 
+  }, []);
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
@@ -49,27 +58,29 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/appointment" element={<AppointmentForm token={token} />} />
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/hospital" element={<Hospital />} />
-        <Route path="/labs" element={<Labs />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/chatbot" element={<Chatbot />} />
-        <Route path="/userguide" element={<UserGuide />} />
-        <Route path="/patientdashboard" element={<PatientDashboard token={token} /> } />
-        <Route path="/profileupload" element={<ProfileUpload />} />
-        <Route path="/DataDisplay" element={<DataDisplay />}  token={token} />
-        <Route path="/HospitalForm" element={<HospitalForm />}   />
-        <Route path="/DoctorForm" element={<DoctorForm />}   />
-
-
-      </Routes>
-    </Router>
+    loading ? (
+      <Loader />
+    ) : (
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/appointment" element={<AppointmentForm token={token} />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/hospital" element={<Hospital />} />
+          <Route path="/labs" element={<Labs />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="/userguide" element={<UserGuide />} />
+          <Route path="/patientdashboard" element={<PatientDashboard token={token} />} />
+          <Route path="/profileupload" element={<ProfileUpload />} />
+          <Route path="/DataDisplay" element={<DataDisplay token={token} />} />
+          <Route path="/HospitalForm" element={<HospitalForm />} />
+          <Route path="/DoctorForm" element={<DoctorForm />} />
+        </Routes>
+      </Router>
+    )
   );
 };
 
