@@ -1,6 +1,10 @@
 const UserModel = require('../Models/UserModel')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+<<<<<<< HEAD
+=======
+const { generateToken } = require('../Utils/authUtils');
+>>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30
 
 const registerController = async (req, res) => {
     try {
@@ -81,6 +85,36 @@ const loginController = async (req, res) => {
         })
     }
 };
+<<<<<<< HEAD
+=======
+
+
+const loginUser = async (req, res) => {
+    try {
+        const User = await UserModel.findOne({ email: req.body.email });
+        if (!User) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        const isMatch = await bcrypt.compare(req.body.password, User.password);
+        if (!isMatch) {
+            return res.status(400).json({ message: "Invalid credentials" });
+        }
+
+        const token = jwt.sign(
+            { userId: User._id, role: User.role },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' }
+        );
+
+        res.json({ token, user: User });
+    } catch (error) {
+        res.status(500).json({ message: "Server error" });
+    }
+};
+
+
+>>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30
 //get current user
 const currentUserController = async (req, res) => {
     try {
@@ -99,4 +133,26 @@ const currentUserController = async (req, res) => {
         })
     }
 };
+<<<<<<< HEAD
 module.exports = { registerController, loginController, currentUserController };
+=======
+
+const fetchAllUsersController = async (req, res) => {
+    try {
+        const users = await UserModel.find({});
+        return res.status(200).send({
+            success: true,
+            message: "Users fetched successfully",
+            users,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "Error in fetching users",
+            error,
+        });
+    }
+};
+module.exports = { registerController, loginController,loginUser, currentUserController, fetchAllUsersController };
+>>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30

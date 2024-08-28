@@ -1,0 +1,47 @@
+/* Sidebar styling */
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+  }
+  
+  /* List group item styling */
+  .list-group-item {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Hover and active states for list items */
+  .list-group-item:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .list-group-item.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Card styling */
+  .card-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Chatbot styling */
+  .chatbot-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

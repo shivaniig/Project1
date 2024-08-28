@@ -1,7 +1,11 @@
 {
   "name": "bbm",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "blood test report management",
+=======
+  "description": "blood bank management",
+>>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30
   "main": "Server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,19 +16,31 @@
   "dependencies": {
     "axios": "^1.7.3",
     "bcryptjs": "^2.4.3",
+<<<<<<< HEAD
     "body-parser": "^1.20.2",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+=======
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+>>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.4",
+<<<<<<< HEAD
     "razorpay": "^2.9.4",
     "react-toastify": "^10.0.5",
     "shortid": "^2.2.16"
+=======
+    "react-toastify": "^10.0.5"
+>>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30
   }
 }
