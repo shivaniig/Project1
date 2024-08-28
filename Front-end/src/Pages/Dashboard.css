@@ -1,0 +1,29 @@
+/* Styles only apply within the dashboard-wrapper class */
+.dashboard-wrapper .dashboard-container {
+    padding: 20px;
+  }
+  
+  .dashboard-wrapper .dashboard-section {
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-wrapper .dashboard-section h2,
+  .dashboard-wrapper .dashboard-section h3 {
+    color: #333;
+  }
+  
+  .dashboard-wrapper .dashboard-section p {
+    color: #666;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .dashboard-wrapper .dashboard-container {
+      padding: 10px;
+    }
+  
+    .dashboard-wrapper .dashboard-section {
+      margin-bottom: 15px;
+    }
+  }
+  

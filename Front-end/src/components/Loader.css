@@ -1,0 +1,19 @@
+.Loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.loader_img{
+    width: 150px;
+    padding: 10px ;
+}
+
+.loader_text{
+    color: rgb(249, 114, 114);
+    font-size: 20px;
+    font-family:cursive;
+}
