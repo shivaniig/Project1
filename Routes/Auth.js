@@ -1,35 +1,28 @@
-const express = require('express')
-const { registerController,
-<<<<<<< HEAD
+const express = require('express');
+const {
+    registerController,
     loginController,
-    currentUserController, } = require('../Controllers/AuthController');
-=======
-    loginController,loginUser,
-    currentUserController,fetchAllUsersController } = require('../Controllers/AuthController');
->>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30
+    loginUser,
+    currentUserController,
+    fetchAllUsersController
+} = require('../Controllers/AuthController');
 const authMiddleware = require('../Middlewares/authMiddleware');
 
-const router = express.Router()
-//Register || post
-router.post('/register', registerController)
+const router = express.Router();
 
-//login||post
+// Register || POST
+router.post('/register', registerController);
+
+// Login || POST
 router.post('/login', loginController);
 
-<<<<<<< HEAD
-//get current user||get
-router.get('/current-user', authMiddleware, currentUserController);
-
-=======
-// Define the login route
+// Define a separate login route, if needed
 router.post('/loginu', loginUser);
 
-//get current user||get
+// Get current user || GET
 router.get('/current-user', authMiddleware, currentUserController);
 
-router.get('/users',  fetchAllUsersController);
+// Fetch all users || GET
+router.get('/users', fetchAllUsersController);
 
-
->>>>>>> 37b630e4e0f87a42152b3abb4e7ef207803a2b30
-module.exports = router
-
+module.exports = router;
